@@ -7,7 +7,7 @@ using ReactWithASP.Server.Models.DTOs;
 namespace ReactWithASP.Server.Controllers;
 
 [ApiController]
-[Route("api/students")]
+[Route("api/[controller]")]
 
 public class StudentController(AppDbContext context) : ControllerBase
 {

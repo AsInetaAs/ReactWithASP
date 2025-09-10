@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+@tailiwind base;
+@tailiwind components;
+@tailiwind utilities;
