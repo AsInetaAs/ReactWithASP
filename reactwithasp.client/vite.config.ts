@@ -1,14 +1,21 @@
-/*import tailwindcss from '@tailwindss/vite';
-
-export default defineConfig({
-    plugins: [plugin(), tailwindcss()],
-});
-   */
-import { defineConfig } from 'vite';
+﻿import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-
-// Tailwind veikia per postcss, nereikia tailwind plugin Vite
 
 export default defineConfig({
     plugins: [react()],
+    server: {
+        port: 5173, 
+        open: true,
+        proxy: {
+            '/api': {
+                target: 'http://localhost:54609',
+                changeOrigin: true,
+                secure: false
+            }
+        },
+        fs: {
+            strict: false
+        }
+    },
+    // history fallback veikia tik per middleware, todėl naudok pluginą jei reikia
 });

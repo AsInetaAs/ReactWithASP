@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IStudent } from "../../interfaces/IStudent";
 import { getApi } from "../../api";
 
@@ -10,9 +10,10 @@ export default function Students() {
     }, []);
 
     return <div>
-        <div>{
+        <div className="text-3xl">Students</div>
+            <div>  {
             students.map(student =>
-                <div key={student.id}>{student.id} {student.fullName} {student.email}</div>)
+                <div key={student.id}>{student.fullName} {student.email}</div>)
         }</div>
     </div>
 }

@@ -1,6 +1,6 @@
 function getFullURL(endpoint: string) { 
 
-    return `api${endpoint}`
+    return `api/${endpoint}`
 }
 
 function getHeaders(header = {}) {
