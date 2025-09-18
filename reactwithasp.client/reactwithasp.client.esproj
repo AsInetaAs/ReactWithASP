@@ -10,6 +10,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="src\pages\HomePage\" />
-    <Folder Include="src\pages\StudentsPage\" />
+    <Folder Include="src\pages\StudentsPage\components\" />
   </ItemGroup>
 </Project>

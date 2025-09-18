@@ -1,4 +1,4 @@
-namespace ReactWithASP.Server
+﻿namespace ReactWithASP.Server
 {
     public class WeatherForecast
     {
