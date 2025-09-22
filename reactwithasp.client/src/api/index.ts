@@ -1,3 +1,5 @@
+import { IStudent } from "../interfaces/IStudent";
+
 function getFullURL(endpoint: string) { 
 
     return `api/${endpoint}`
@@ -65,7 +67,6 @@ export async function postApi(
         } catch {
             respose = null
         }
-        if (!response) return
         return respose
     }
     catch (e: any) {
@@ -80,4 +81,7 @@ export async function putApi(endpoint: string, data: Record<string, any>,
 export async function deleteApi(endpoint: string, data: Record<string, any>)
 {
     return postApi(endpoint, data, 'DELETE')
+}
+export async function createStudent(student: IStudent) {
+    return await postApi('students', student)
 }

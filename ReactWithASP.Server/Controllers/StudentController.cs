@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using ReactWithASP.Server.Data;
 using ReactWithASP.Server.Models.DTOs;
 using ReactWithASP.Server.Services;
-using System.Collections.Generic;
 
 
 namespace ReactWithASP.Server.Controllers;
@@ -20,6 +17,13 @@ public class StudentController(IGetStudentService getStudentService, ISaveStuden
         return Ok(results);
     }
 
+    [HttpGet("{id:int}")]
+    public async Task<IActionResult> GetStudent(int id)
+    {
+        var student = await getStudentService.Get(id);
+        return Ok(student);
+
+    }
 
     [HttpPut(template:"{id:int}")]
     public async Task<IActionResult> Put(int id, StudentDto dto)
@@ -28,6 +32,12 @@ public class StudentController(IGetStudentService getStudentService, ISaveStuden
         return Ok();
     }
 
+    [HttpPost]
+    public async Task<IActionResult> Post(StudentDto dto)
+    {
+        await saveStudentService.Store(dto);
+        return Ok();
+    }
 }
 
 

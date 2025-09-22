@@ -1,7 +1,8 @@
 ﻿import { useForm } from "react-hook-form";
 import { IStudent } from "../../../interfaces/IStudent";
 import { useEffect } from "react";
-import { formStyle} from "../../../styles/formStyle";
+import { formStyle } from "../../../styles/formStyle";
+import { createStudent } from "../../../api";
 
 type StudentFormProps = { student: IStudent | undefined; storeStudent: (data: IStudent) => void}
 
@@ -14,7 +15,10 @@ export function StudentForm(props: StudentFormProps) {
   }, [student, reset]);
 
   return (
-    <form onSubmit={handleSubmit(storeStudent)} className="flex flex-col gap-3">
+      <form onSubmit={handleSubmit(async (data) => {
+              storeStudent(data);
+          
+      })} className="flex flex-col gap-3">
       <input type="hidden" {...register("id")} />
 
       <div>
@@ -31,7 +35,9 @@ export function StudentForm(props: StudentFormProps) {
         <label htmlFor="email" className={formStyle.label}>El. paštas</label>
         <input  id="email"  className={formStyle.input} type="email" {...register("email")} defaultValue={student?.email || ''} />
       </div>
-      <button className={formStyle.button} type="submit">Atnaujinti</button>
+          <button className={formStyle.button} type="submit">
+              {student && student.id !== 0 ? 'Atnaujinti' : 'Išsaugoti'}
+          </button>
     </form>
   )
 }
