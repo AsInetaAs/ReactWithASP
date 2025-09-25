@@ -37,6 +37,12 @@ public class GroupController(IGetGroupService getGroupService, ISaveGroupService
         await saveGroupService.Store(dto);
         return Ok();
     }
+    [HttpDelete(template: "{id:int}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        await saveGroupService.Delete(id);
+        return Ok();
+    }
 }
 
 

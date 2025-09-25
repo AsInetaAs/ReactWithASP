@@ -38,6 +38,12 @@ public class SubjectController(IGetSubjectService getSubjectService, ISaveSubjec
         await saveSubjectService.Store(dto);
         return Ok();
     }
+    [HttpDelete(template: "{id:int}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        await saveSubjectService.Delete(id);
+        return Ok();
+    }
 }
 
 

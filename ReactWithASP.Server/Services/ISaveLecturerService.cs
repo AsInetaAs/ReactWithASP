@@ -7,5 +7,6 @@ namespace ReactWithASP.Server.Services
         Task Store(LecturerDto dto);
 
         Task Update(int id, LecturerDto dto);
+        Task Delete(int id);
     }
 }

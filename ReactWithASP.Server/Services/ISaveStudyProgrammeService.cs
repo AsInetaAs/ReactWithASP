@@ -6,5 +6,6 @@ using ReactWithASP.Server.Models.DTOs;
     Task Store(StudyProgrammeDto dto);
 
     Task Update(int id, StudyProgrammeDto dto);
+    Task Delete(int id);
 }
 

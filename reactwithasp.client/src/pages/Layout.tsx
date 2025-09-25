@@ -21,11 +21,12 @@ export function Layout() {
             </ul>
         </nav>
     </header>
-        <div>
+        <main className="flex-grow pt-24 px-4">
             {navigation.state !== "idle" && <div className="m-1">Navigation in progress...</div>}
             {fetcherInProgress && <div className="m-1">Fetcher in progress...</div>}
-        </div>
+       
         <Outlet />
+        </main >
         <footer className='bg-gray-500 text-white text-sm flex content-center justify-center items-center h-10'>
             <div>Panevėžio kolegija</div>
         </footer>

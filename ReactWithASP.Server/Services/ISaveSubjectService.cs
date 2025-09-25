@@ -6,5 +6,6 @@ public interface ISaveSubjectService
     Task Store(SubjectDto dto);
 
     Task Update(int id, SubjectDto dto);
+    Task Delete(int id);
 }
 

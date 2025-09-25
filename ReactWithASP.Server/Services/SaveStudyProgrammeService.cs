@@ -24,4 +24,13 @@ using ReactWithASP.Server.Models.Entities;
             await context.SaveChangesAsync();
         }
     }
+    public async Task Delete(int id)
+    {
+        var programme = await context.StudyProgrammes.FirstOrDefaultAsync(i => i.Id == id);
+        if (programme != null)
+        {
+            context.StudyProgrammes.Remove(programme);
+            await context.SaveChangesAsync();
+        }
+    }
 }

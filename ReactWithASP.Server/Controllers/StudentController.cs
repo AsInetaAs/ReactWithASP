@@ -38,6 +38,12 @@ public class StudentController(IGetStudentService getStudentService, ISaveStuden
         await saveStudentService.Store(dto);
         return Ok();
     }
+    [HttpDelete(template:"{id:int}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        await saveStudentService.Delete(id);
+        return Ok();
+    }
 }
 
 

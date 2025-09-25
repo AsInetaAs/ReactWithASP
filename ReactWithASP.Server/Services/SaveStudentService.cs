@@ -24,5 +24,15 @@ public class SaveStudentService(AppDbContext context) : ISaveStudentService
             await context.SaveChangesAsync();
         }
     }
+    public async Task Delete(int id)
+    {
+        var student = await context.Students.FirstOrDefaultAsync(i => i.Id == id);
+        if (student != null)
+        {
+            context.Students.Remove(student);
+            await context.SaveChangesAsync();
+        }
+    }
+
 }
 

@@ -24,5 +24,14 @@ public class SaveGroupService(AppDbContext context) : ISaveGroupService
             await context.SaveChangesAsync();
         }
     }
+    public async Task Delete(int id)
+    {
+        var group = await context.Groups.FirstOrDefaultAsync(i => i.Id == id);
+        if (group != null)
+        {
+            context.Groups.Remove(group);
+            await context.SaveChangesAsync();
+        }
+    }
 }
 

@@ -38,6 +38,12 @@ public class StudyProgrammeController(IGetStudyProgrammeService getStudyProgramm
         await saveStudyProgrammeService.Store(dto);
         return Ok();
     }
+    [HttpDelete(template: "{id:int}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        await saveStudyProgrammeService.Delete(id);
+        return Ok();
+    }
 }
 
 

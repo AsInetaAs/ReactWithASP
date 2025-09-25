@@ -24,5 +24,14 @@ public class SaveSubjectService(AppDbContext context) : ISaveSubjectService
             await context.SaveChangesAsync();
         }
     }
+    public async Task Delete(int id)
+    {
+        var subject = await context.Subjects.FirstOrDefaultAsync(i => i.Id == id);
+        if (subject != null)
+        {
+            context.Subjects.Remove(subject);
+            await context.SaveChangesAsync();
+        }
+    }
 }
 

@@ -24,5 +24,14 @@ namespace ReactWithASP.Server.Services;
                 await context.SaveChangesAsync();
             }
         }
+        public async Task Delete(int id)
+        {
+            var lecturer = await context.Lecturers.FirstOrDefaultAsync(i => i.Id == id);
+            if (lecturer != null)
+            {
+                context.Lecturers.Remove(lecturer);
+                await context.SaveChangesAsync();
+            }
     }
+}
 

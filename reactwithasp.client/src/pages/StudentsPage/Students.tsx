@@ -1,6 +1,6 @@
 ﻿import { useEffect, useState } from 'react';
 import { IStudent } from "../../interfaces/IStudent";
-import { getApi, putApi, postApi } from "../../api";
+import { getApi, putApi, postApi, deleteApi } from "../../api";
 import {Modal} from "../components/Modal";
 import {StudentForm} from "./components/StudentForm";
 
@@ -46,7 +46,10 @@ const editHandler = (student: IStudent) => {
 
             <div>{
                 students.map(student => <div key={student.id}><button type="button" onClick={() => editHandler(student)}>{student.firstName} {student.lastName}</button>
-                {student.email}</div>)
+                {student.email}
+                    <button type="button" onClick={() => deleteApi(`students/${student.id}`, {}).then(() => getStudents())} className="bg-red-500 hover:bg-red-700 text-white 
+                        font-bold py-1 px-2 rounded my-2">Delete</button>
+                </div>)
        }</div>
     </div>
 }

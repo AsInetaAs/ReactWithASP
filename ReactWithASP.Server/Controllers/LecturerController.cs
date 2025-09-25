@@ -37,6 +37,12 @@ public class LecturerController(IGetLecturerService getLecturerService, ISaveLec
         await saveLecturerService.Store(dto);
         return Ok();
     }
+    [HttpDelete(template: "{id:int}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        await saveLecturerService.Delete(id);
+        return Ok();
+    }
 }
 
 
