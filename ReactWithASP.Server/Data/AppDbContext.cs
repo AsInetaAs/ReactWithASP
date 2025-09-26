@@ -17,5 +17,15 @@ namespace ReactWithASP.Server.Data
         {
             builder.ConfigureWarnings(warnings => warnings.Ignore(CoreEventId.NavigationBaseIncludeIgnored, CoreEventId.NavigationBaseIncluded));
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<StudyProgramme>()
+                .HasMany(sp => sp.Subjects)
+                .WithMany(s => s.StudyProgrammes)
+                .UsingEntity(j => j.ToTable("ProgrammeSubjects"));
+
+        }
     }
 }

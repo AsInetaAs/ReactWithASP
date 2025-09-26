@@ -10,6 +10,8 @@ namespace ReactWithASP.Server.Models.Entities
 
         public void SetValues(string title, string description, int duration)
         => (Title, Description, Duration) = (title, description, duration);
+
+        public ICollection<Subject> Subjects { get; } = [];
     }
 
 }

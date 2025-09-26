@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReactWithASP.Server.Data;
 
@@ -10,9 +11,11 @@ using ReactWithASP.Server.Data;
 namespace ReactWithASP.Server.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250926080932_AddProgrammeSubject_ManyToMany")]
+    partial class AddProgrammeSubject_ManyToMany
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -227,7 +230,7 @@ namespace ReactWithASP.Server.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Groups", (string)null);
+                    b.ToTable("Groups");
                 });
 
             modelBuilder.Entity("ReactWithASP.Server.Models.Entities.Lecturer", b =>
@@ -253,7 +256,7 @@ namespace ReactWithASP.Server.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Lecturers", (string)null);
+                    b.ToTable("Lecturers");
                 });
 
             modelBuilder.Entity("ReactWithASP.Server.Models.Entities.Student", b =>
@@ -279,7 +282,7 @@ namespace ReactWithASP.Server.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Students", (string)null);
+                    b.ToTable("Students");
                 });
 
             modelBuilder.Entity("ReactWithASP.Server.Models.Entities.StudyProgramme", b =>
@@ -303,7 +306,7 @@ namespace ReactWithASP.Server.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("StudyProgrammes", (string)null);
+                    b.ToTable("StudyProgrammes");
                 });
 
             modelBuilder.Entity("ReactWithASP.Server.Models.Entities.Subject", b =>
@@ -322,7 +325,7 @@ namespace ReactWithASP.Server.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Subjects", (string)null);
+                    b.ToTable("Subjects");
                 });
 
             modelBuilder.Entity("StudyProgrammeSubject", b =>

@@ -9,6 +9,8 @@ namespace ReactWithASP.Server.Models.Entities
 
         public void SetValues(string title, int credits)
         => (Title, Credits) = (title, credits);
+
+        public ICollection<StudyProgramme> StudyProgrammes { get; } = [];
     }
 
 }
