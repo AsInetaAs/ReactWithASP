@@ -44,6 +44,29 @@ public class StudyProgrammeController(IGetStudyProgrammeService getStudyProgramm
         await saveStudyProgrammeService.Delete(id);
         return Ok();
     }
+
+
+    [HttpPost(template: "{programmeId:int}/subjects/{subjectId:int}")]
+    public async Task<IActionResult> AddSubject(int programmeId, int subjectId)
+    {
+        await saveStudyProgrammeService.AddSubject(programmeId, subjectId);
+        return Ok();
+    }
+    [HttpDelete(template: "{programmeId:int}/subjects/{subjectId:int}")]
+    public async Task<IActionResult> RemoveSubject(int programmeId, int subjectId)
+    {
+        await saveStudyProgrammeService.RemoveSubject(programmeId, subjectId);
+        return Ok();
+    }
+
+    [HttpGet("{programmeId:int}/subjects")]
+    public async Task<IActionResult> GetSubjects(int programmeId)
+    {
+        var items = await getStudyProgrammeService.GetSubjects(programmeId);
+        
+        return Ok(items ?? new List<SubjectDto>());
+    }
+
 }
 
 

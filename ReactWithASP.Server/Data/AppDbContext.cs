@@ -21,11 +21,22 @@ namespace ReactWithASP.Server.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<StudyProgramme>()
                 .HasMany(sp => sp.Subjects)
                 .WithMany(s => s.StudyProgrammes)
-                .UsingEntity(j => j.ToTable("ProgrammeSubjects"));
-
+                .UsingEntity<Dictionary<string, object>>(
+                    "studyprogrammesubject",     
+                    j => j.HasOne<Subject>()     
+                          .WithMany()
+                          .HasForeignKey("SubjectsId")
+                          .OnDelete(DeleteBehavior.Cascade),
+                    j => j.HasOne<StudyProgramme>()  
+                          .WithMany()
+                          .HasForeignKey("StudyProgrammesId")
+                          .OnDelete(DeleteBehavior.Cascade)
+                );
         }
+
     }
 }

@@ -7,5 +7,7 @@ namespace ReactWithASP.Server.Services;
     {
     Task<List<StudyProgrammeDto>> GetAll();
     Task<StudyProgrammeDto?> Get(int id);
+
+    Task<List<SubjectDto>> GetSubjects(int programmeId);
 }
 

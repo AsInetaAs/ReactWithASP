@@ -23,6 +23,11 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IGetStudentService, GetStudentService>();
 builder.Services.AddScoped<ISaveStudentService, SaveStudentService>();
+builder.Services.AddScoped<IGetSubjectService, GetSubjectService>();
+builder.Services.AddScoped<ISaveSubjectService, SaveSubjectService>();
+builder.Services.AddScoped<IGetStudyProgrammeService, GetStudyProgrammeService>();
+builder.Services.AddScoped<ISaveStudyProgrammeService, SaveStudyProgrammeService>();
+
 
 var app = builder.Build();
 

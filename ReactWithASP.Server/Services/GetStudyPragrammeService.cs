@@ -5,7 +5,7 @@ using ReactWithASP.Server.Models.Entities;
 
 namespace ReactWithASP.Server.Services;
 
-    public class GetStudyPragrammeService(AppDbContext context) : IGetStudyProgrammeService
+    public class GetStudyProgrammeService(AppDbContext context) : IGetStudyProgrammeService
 {
     public async Task<List<StudyProgrammeDto>> GetAll()
     {
@@ -24,6 +24,19 @@ namespace ReactWithASP.Server.Services;
         if (programme == null) return null;
         return MapDto(programme);
     }
+    public async Task<List<SubjectDto>> GetSubjects(int programmeId)
+    {
+        var programme = await context.StudyProgrammes
+            .Include(p => p.Subjects)
+            .FirstOrDefaultAsync(p => p.Id == programmeId);
+
+        if (programme == null) return new List<SubjectDto>();
+
+        return programme.Subjects
+            .Select(s => new SubjectDto(s.Id, s.Title, s.Credits))
+            .ToList();
+    }
+
 
     private StudyProgrammeDto MapDto(StudyProgramme programme) =>
         new StudyProgrammeDto(programme.Id, programme.Title, programme.Description, programme.Duration);

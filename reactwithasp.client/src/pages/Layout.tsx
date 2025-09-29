@@ -18,6 +18,9 @@ export function Layout() {
                 <li>
                     <Link to="/students">Students</Link>
                 </li>
+                 <li>
+                        <Link to="/programmesubjects">Programme Subjects</Link>
+                </li>
             </ul>
         </nav>
     </header>

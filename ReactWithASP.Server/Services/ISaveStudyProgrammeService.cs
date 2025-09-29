@@ -7,5 +7,8 @@ using ReactWithASP.Server.Models.DTOs;
 
     Task Update(int id, StudyProgrammeDto dto);
     Task Delete(int id);
+
+    Task AddSubject(int programmeId, int subjectId);
+    Task RemoveSubject(int programmeId, int subjectId);
 }
 

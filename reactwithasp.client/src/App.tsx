@@ -5,6 +5,7 @@ import {
 import Home from "./pages/HomePage/Home";
 import { Layout } from "./pages/Layout";
 import Students from "./pages/StudentsPage/Students";
+import ProgrammeSubjects from "./pages/ProgrammeSubjects/ProgrammeSubjects";
 
 export default function App() {
 
@@ -20,11 +21,13 @@ export default function App() {
                 {
                     path: 'students', 
                     Component: Students
+                },
+                {
+                    path: 'programmesubjects',
+                    Component: ProgrammeSubjects
                 }
             ]
         },
     ]);
     return <RouterProvider router={router} />;
 }
-
-            
