@@ -24,6 +24,9 @@ export function Layout() {
                     <li>
                         <Link to="/lecturers">Lecturers</Link>
                     </li>
+                    <li>
+                        <Link to="/groups">Groups</Link>
+                    </li>
             </ul>
         </nav>
     </header>

@@ -7,6 +7,7 @@ import { Layout } from "./pages/Layout";
 import Students from "./pages/StudentsPage/Students";
 import ProgrammeSubjects from "./pages/ProgrammeSubjects/ProgrammeSubjects";
 import Lecturers from "./pages/LecturersPage/Lecturers";
+import Groups from "./pages/GroupsPage/Groups";
 
 export default function App() {
 
@@ -30,6 +31,10 @@ export default function App() {
                 {
                     path: 'lecturers',
                     Component: Lecturers
+                },
+                {
+                    path: 'groups',
+                    Component: Groups
                 }
 
             ]

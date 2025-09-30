@@ -29,6 +29,9 @@ builder.Services.AddScoped<IGetStudyProgrammeService, GetStudyProgrammeService>(
 builder.Services.AddScoped<ISaveStudyProgrammeService, SaveStudyProgrammeService>();
 builder.Services.AddScoped<IGetLecturerService, GetLecturerService>();
 builder.Services.AddScoped<ISaveLecturerService, SaveLecturerService>();
+builder.Services.AddScoped<IGetGroupService, GetGroupService>();
+builder.Services.AddScoped<ISaveGroupService, SaveGroupService>();
+
 
 
 var app = builder.Build();
