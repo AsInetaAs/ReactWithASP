@@ -27,6 +27,8 @@ builder.Services.AddScoped<IGetSubjectService, GetSubjectService>();
 builder.Services.AddScoped<ISaveSubjectService, SaveSubjectService>();
 builder.Services.AddScoped<IGetStudyProgrammeService, GetStudyProgrammeService>();
 builder.Services.AddScoped<ISaveStudyProgrammeService, SaveStudyProgrammeService>();
+builder.Services.AddScoped<IGetLecturerService, GetLecturerService>();
+builder.Services.AddScoped<ISaveLecturerService, SaveLecturerService>();
 
 
 var app = builder.Build();

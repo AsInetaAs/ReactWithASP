@@ -20,7 +20,10 @@ export function Layout() {
                 </li>
                  <li>
                         <Link to="/programmesubjects">Programme Subjects</Link>
-                </li>
+                    </li>
+                    <li>
+                        <Link to="/lecturers">Lecturers</Link>
+                    </li>
             </ul>
         </nav>
     </header>
