@@ -8,6 +8,8 @@ import Students from "./pages/StudentsPage/Students";
 import ProgrammeSubjects from "./pages/ProgrammeSubjects/ProgrammeSubjects";
 import Lecturers from "./pages/LecturersPage/Lecturers";
 import Groups from "./pages/GroupsPage/Groups";
+import StudyProgrammes from "./pages/StudyProgrammesPage/StudyProgrammes";
+
 
 export default function App() {
 
@@ -35,6 +37,10 @@ export default function App() {
                 {
                     path: 'groups',
                     Component: Groups
+                },
+                {
+                    path: 'studyprogrammes',
+                    Component: StudyProgrammes
                 }
 
             ]
@@ -42,3 +48,4 @@ export default function App() {
     ]);
     return <RouterProvider router={router} />;
 }
+
