@@ -12,6 +12,6 @@
     <Folder Include="src\pages\HomePage\" />
     <Folder Include="src\pages\LecturersPage\components\" />
     <Folder Include="src\pages\StudentsPage\components\" />
-    <Folder Include="src\pages\StudyProgrammesPage\Components\" />
+    <Folder Include="src\pages\StudyProgrammesPage\components\" />
   </ItemGroup>
 </Project>
