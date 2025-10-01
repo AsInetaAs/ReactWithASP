@@ -1,4 +1,4 @@
-import { getCookie } from "@utils/cookies";
+{/* import { getCookie } from "@utils/cookies";
 import { fetchRequest, getHeaders, type ApiResponse } from "./utils";
 
 export async function methodPost<T>(
@@ -15,3 +15,4 @@ export async function methodPost<T>(
 
   return await fetchRequest<T>(endpoint, options);
 }
+*/}

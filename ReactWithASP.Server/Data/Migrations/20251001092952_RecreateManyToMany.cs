@@ -5,7 +5,7 @@
 namespace ReactWithASP.Server.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class AddProgrammeSubject_ManyToMany : Migration
+    public partial class RecreateManyToMany : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

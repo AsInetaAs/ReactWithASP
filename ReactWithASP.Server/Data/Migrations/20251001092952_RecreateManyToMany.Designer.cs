@@ -11,8 +11,8 @@ using ReactWithASP.Server.Data;
 namespace ReactWithASP.Server.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250926080932_AddProgrammeSubject_ManyToMany")]
-    partial class AddProgrammeSubject_ManyToMany
+    [Migration("20251001092952_RecreateManyToMany")]
+    partial class RecreateManyToMany
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -340,7 +340,7 @@ namespace ReactWithASP.Server.Data.Migrations
 
                     b.HasIndex("SubjectsId");
 
-                    b.ToTable("StudyProgrammeSubject", (string)null);
+                    b.ToTable("StudyProgrammeSubject");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

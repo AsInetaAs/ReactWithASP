@@ -1,4 +1,4 @@
-export type ApiResponse<T> = T & { error?: string };
+{/*export type ApiResponse<T> = T & { error?: string };
 
 export function getFullUrl(endpoint: string): string {
   return `/api/${endpoint}`;
@@ -42,3 +42,4 @@ export async function fetchRequest<T>(
   console.error(error);
   return { error: error.message || 'Request failed' } as ApiResponse<T>;
 }
+*/}

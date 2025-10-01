@@ -1,51 +1,24 @@
-import {
-    createBrowserRouter,
-    RouterProvider,
-} from "react-router-dom"; 
-import Home from "./pages/HomePage/Home";
-import { Layout } from "./pages/Layout";
-import Students from "./pages/StudentsPage/Students";
-import ProgrammeSubjects from "./pages/ProgrammeSubjects/ProgrammeSubjects";
-import Lecturers from "./pages/LecturersPage/Lecturers";
-import Groups from "./pages/GroupsPage/Groups";
-import StudyProgrammes from "./pages/StudyProgrammesPage/StudyProgrammes";
+import { RouterProvider } from "react-router-dom";
+import { router } from "@/routes";
+import { useStore, useShallow } from "@/store";
+{/* import { getApi } from "@/api";
+import { IAuth } from "@/interfaces/IAuth";
+import { useEffect } from "react";
 
+export default function App(): Element {
+    const { auth, setAuth } = useStore(useShallow((state) => ({
+        auth: state.auth,
+        setAuth: state.setAuth
+    })));
 
-export default function App() {
+    useEffect(() => {
+        if (auth === undefined) {
+            getApi<IAuth>('authentication/check-session').then(res => {
+                setAuth(res);
+            });
+        }
+    }, [auth]);
 
-    const router = createBrowserRouter([
-        {
-            path: "/",
-            Component: Layout,
-            children: [
-                {
-                    index: true,
-                    Component: Home
-                },
-                {
-                    path: 'students', 
-                    Component: Students
-                },
-                {
-                    path: 'programmesubjects',
-                    Component: ProgrammeSubjects
-                },
-                {
-                    path: 'lecturers',
-                    Component: Lecturers
-                },
-                {
-                    path: 'groups',
-                    Component: Groups
-                },
-                {
-                    path: 'studyprogrammes',
-                    Component: StudyProgrammes
-                }
-
-            ]
-        },
-    ]);
-    return <RouterProvider router={router} />;
+    return <RouterProvider router={router()} />;
 }
-
+*/}
