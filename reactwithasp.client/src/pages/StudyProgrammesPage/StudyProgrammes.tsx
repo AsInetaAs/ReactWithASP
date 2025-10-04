@@ -1,7 +1,7 @@
 ﻿import { useEffect, useState } from 'react';
-import { IStudyProgramme } from "../../interfaces/IStudyProgramme";
-import { getApi, putApi, postApi, deleteApi } from "../../api";
-import { Modal } from "../components/Modal";
+import { IStudyProgramme } from "@/interfaces/IStudyProgramme";
+import { getApi, putApi, postApi, deleteApi } from "@/api";
+import { Modal } from "@/pages/components/Modal";
 import { StudyProgrammeForm } from "./components/StudyProgrammeForm";
 
 export default function StudyProgramme() {

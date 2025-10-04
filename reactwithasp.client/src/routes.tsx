@@ -7,7 +7,12 @@ import {
 } from "react-router-dom";
 import { ProtectedRoute } from "@/ProtectedRoute";
 import Students from "@/pages/StudentsPage/Students";
-import Dashboard from "@/pages/admin/DasboardPage/Dashboard";
+import Lecturers from "@/pages/LecturersPage/Lecturers";
+import Groups from "@/pages/GroupsPage/Groups";
+import ProgrammeSubjects from "@/pages/ProgrammeSubjects/ProgrammeSubjects";
+import StudyProgrammes from "@/pages/StudyProgrammesPage/StudyProgrammes";
+import Dashboard from "@/pages/admin/DashboardPage/Dashboard";
+
 
 export function router() {
     return createBrowserRouter([
@@ -22,7 +27,23 @@ export function router() {
                 {
                     path: 'students',
                     element: <ProtectedRoute><Students /></ProtectedRoute >
-        },
+                },
+                {
+                    path: 'lecturers',
+                    element: <ProtectedRoute><Lecturers /></ProtectedRoute >
+                },
+                {
+                    path: 'programmes',
+                    element: <ProtectedRoute><StudyProgrammes /></ProtectedRoute >
+                },
+                {
+                    path: 'programmesubjects',
+                    element: <ProtectedRoute><ProgrammeSubjects /></ProtectedRoute >
+                },
+                {
+                    path: 'groups',
+                    element: <ProtectedRoute><Groups /></ProtectedRoute >
+                },
                 {
                     path: 'auth/signup',
 

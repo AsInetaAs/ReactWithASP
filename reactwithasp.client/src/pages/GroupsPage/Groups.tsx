@@ -1,7 +1,7 @@
 ﻿import { useEffect, useState } from 'react';
-import { IGroup } from "../../interfaces/IGroup";
-import { getApi, putApi, postApi, deleteApi } from "../../api";
-import { Modal } from "../components/Modal";
+import { IGroup } from "@/interfaces/IGroup";
+import { getApi, putApi, postApi, deleteApi } from "@/api";
+import { Modal } from "@/pages/components/Modal";
 import { GroupForm } from "./components/GroupForm";
 
 export default function Groups() {

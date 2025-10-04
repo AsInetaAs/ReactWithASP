@@ -1,7 +1,7 @@
 ﻿import { useEffect, useState } from 'react';
-import { IStudent } from "../../interfaces/IStudent";
-import { getApi, putApi, postApi, deleteApi } from "../../api";
-import {Modal} from "../components/Modal";
+import { IStudent } from "@/interfaces/IStudent";
+import { getApi, putApi, postApi, deleteApi } from "@/api";
+import {Modal} from "@/pages/components/Modal";
 import {StudentForm} from "./components/StudentForm";
 
 export default function Students() {

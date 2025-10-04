@@ -1,7 +1,7 @@
 ﻿import { useForm } from "react-hook-form";
-import { IStudyProgramme } from "../../../interfaces/IStudyProgramme";
+import { IStudyProgramme } from "@/interfaces/IStudyProgramme";
 import { useEffect } from "react";
-import { formStyle } from "../../../styles/formStyle";
+import { formStyle } from "@/styles/formStyle";
 //import { createStudyProgramme } from "../../../api";
 
 type StudyProgrammeFormProps = { studyProgramme: IStudyProgramme | undefined; storeStudyProgramme: (data: IStudyProgramme) => void }

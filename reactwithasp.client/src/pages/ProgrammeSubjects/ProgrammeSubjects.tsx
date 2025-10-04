@@ -1,8 +1,8 @@
 ﻿import { useEffect, useState } from "react";
-import { getApi, postApi, deleteApi } from "../../api";
-import { IStudyProgramme } from "../../interfaces/IStudyProgramme";
-import { ISubject } from "../../interfaces/ISubject";
-import { Modal } from "../components/Modal";
+import { getApi, postApi, deleteApi } from "@/api";
+import { IStudyProgramme } from "@/interfaces/IStudyProgramme";
+import { ISubject } from "@/interfaces/ISubject";
+import { Modal } from "@/pages/components/Modal";
 import { SubjectInfo } from "./components/SubjectInfo";
 import { ProgrammeSubjectsTable } from "./components/ProgrammeSubjectsTable";
 

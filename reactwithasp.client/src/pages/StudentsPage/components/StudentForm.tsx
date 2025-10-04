@@ -1,8 +1,8 @@
 ﻿import { useForm } from "react-hook-form";
-import { IStudent } from "../../../interfaces/IStudent";
+import { IStudent } from "@/interfaces/IStudent";
 import { useEffect } from "react";
-import { formStyle } from "../../../styles/formStyle";
-//import { createStudent } from "../../../api";
+import { formStyle } from "@/styles/formStyle";
+//import { createStudent } from "@/api";
 
 type StudentFormProps = { student: IStudent | undefined; storeStudent: (data: IStudent) => void}
 

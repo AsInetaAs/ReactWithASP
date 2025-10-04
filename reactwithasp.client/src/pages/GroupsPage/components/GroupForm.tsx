@@ -1,7 +1,7 @@
 ﻿import { useForm } from "react-hook-form";
-import { IGroup } from "../../../interfaces/IGroup";
+import { IGroup } from "@/interfaces/IGroup";
 import { useEffect } from "react";
-import { formStyle } from "../../../styles/formStyle";
+import { formStyle } from "@/styles/formStyle";
 
 type GroupFormProps = { group: IGroup | undefined; storeGroup: (data: IGroup) => void }
 

@@ -1,4 +1,4 @@
-﻿{/* import { Link, Outlet, useFetchers, useNavigation } from "react-router-dom";
+﻿import { Link, Outlet, useFetchers, useNavigation } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { UserRoles } from "@/data/userRoles";
 
@@ -17,31 +17,31 @@ export function Layout() {
                 <nav>
                     <ul className="flex gap-x-2">
                         <li>
-                            <Link to="/">Home</Link>
+                            <Link to="/">|Home|</Link>
                         </li>
                         {
                         auth?.isAuthenticated ?  <>
-                                <li><Link to="/students">Students</Link></li>
-                                <li><Link to="/studyprogrammes">Study Programmes</Link></li>
-                                <li><Link to="/lecturers">Lecturers</Link></li>
-                                <li><Link to="/groups">Groups</Link></li>
-                                <li><Link to="/programmesubjects">Programme Subjects</Link></li>
+                                <li><Link to="/students">|Students|</Link></li>
+                                <li><Link to="/programmes">|Study Programmes|</Link></li>
+                                <li><Link to="/lecturers">|Lecturers|</Link></li>
+                                <li><Link to="/groups">|Groups|</Link></li>
+                                <li><Link to="/programmesubjects">|Programme Subjects|</Link></li>
                                 {
                                 auth?.role === UserRoles.Admin ? 
                                     <li>
-                                        <Link to="/admin/dashboard">Admin Panel</Link>
+                                        <Link to="/admin/dashboard">|Admin Panel|</Link>
                                     </li>
                                         : null
                                 }
                                 <li>
-                                    <button onClick={logoutHandler}>Logout</button>
+                                    <button onClick={logoutHandler}>|Logout|</button>
                                 </li>
                             </> : <>
                                 <li>
-                                    <Link to="/auth/signup">Registration</Link>
+                                    <Link to="/auth/signup">|Registration|</Link>
                                 </li>
                                 <li>
-                                    <Link to="/auth/signin">Login</Link>
+                                    <Link to="/auth/signin">|Login|</Link>
                                 </li>
                             </>
                         }
@@ -49,7 +49,7 @@ export function Layout() {
                 </nav>
             </header>
             <div>
-                {navigation.state !== "idle" && ( <div className="m-1">Navigation in progress...</div>}
+                {navigation.state !== "idle" && ( <div className="m-1">Navigation in progress...</div>)}
                 {fetcherInProgress && <div className="m-1">Fetcher in progress...</div>}
             </div>
             <Outlet />
@@ -57,5 +57,7 @@ export function Layout() {
                 <div>Panevėžio kolegija</div>
             </footer>
         </div>
+    );
 }
-*/}
+
+

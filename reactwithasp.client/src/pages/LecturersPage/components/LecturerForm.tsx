@@ -1,9 +1,7 @@
 ﻿import { useForm } from "react-hook-form";
-import { ILecturer } from "../../../interfaces/ILecturer";
+import { ILecturer } from "@/interfaces/ILecturer";
 import { useEffect } from "react";
-import { formStyle } from "../../../styles/formStyle";
-//import { createLecturer } from "../../../api";
-
+import { formStyle } from "@/styles/formStyle";
 
 
 

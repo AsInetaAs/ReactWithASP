@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ReactWithASP.Server.Models.DTOs;
 using ReactWithASP.Server.Services;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace ReactWithASP.Server.Controllers;
 
 [ApiController]
 [Route("api/groups")]
+[Authorize]
 public class GroupController(IGetGroupService getGroupService, ISaveGroupService saveGroupService) : ControllerBase
 {
     [HttpGet]
@@ -25,6 +26,7 @@ public class GroupController(IGetGroupService getGroupService, ISaveGroupService
     }
 
     [HttpPut(template: "{id:int}")]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Put(int id, GroupDto dto)
     {
         await saveGroupService.Update(id, dto);
@@ -32,12 +34,14 @@ public class GroupController(IGetGroupService getGroupService, ISaveGroupService
     }
 
     [HttpPost]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Post(GroupDto dto)
     {
         await saveGroupService.Store(dto);
         return Ok();
     }
     [HttpDelete(template: "{id:int}")]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Delete(int id)
     {
         await saveGroupService.Delete(id);

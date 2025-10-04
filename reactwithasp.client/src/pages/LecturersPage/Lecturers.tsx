@@ -1,6 +1,6 @@
 ﻿import { useEffect, useState } from 'react';
-import { ILecturer } from "../../interfaces/ILecturer";
-import { getApi, putApi, postApi, deleteApi } from "../../api";
+import { ILecturer } from "@/interfaces/ILecturer";
+import { getApi, putApi, postApi, deleteApi } from "@/api";
 import { Modal } from "../components/Modal";
 import { LecturerForm } from "./components/LecturerForm";
 

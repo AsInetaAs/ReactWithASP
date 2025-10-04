@@ -1,4 +1,4 @@
-import { ISubject } from "../../../interfaces/ISubject"; 
+import { ISubject } from "@/interfaces/ISubject"; 
 
 type Props = { subject: ISubject };
 
