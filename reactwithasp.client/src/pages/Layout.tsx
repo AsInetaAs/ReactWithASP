@@ -23,6 +23,7 @@ export function Layout() {
                         auth?.isAuthenticated ?  <>
                                 <li><Link to="/students">|Students|</Link></li>
                                 <li><Link to="/programmes">|Study Programmes|</Link></li>
+                                <li><Link to="/subjects">|Subjects|</Link></li>
                                 <li><Link to="/lecturers">|Lecturers|</Link></li>
                                 <li><Link to="/groups">|Groups|</Link></li>
                                 <li><Link to="/programmesubjects">|Programme Subjects|</Link></li>

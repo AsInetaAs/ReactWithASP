@@ -12,6 +12,7 @@ import Groups from "@/pages/GroupsPage/Groups";
 import ProgrammeSubjects from "@/pages/ProgrammeSubjects/ProgrammeSubjects";
 import StudyProgrammes from "@/pages/StudyProgrammesPage/StudyProgrammes";
 import Dashboard from "@/pages/admin/DashboardPage/Dashboard";
+import Subjects from "@/pages/SubjectsPage/Subjects";
 
 
 export function router() {
@@ -43,6 +44,10 @@ export function router() {
                 {
                     path: 'groups',
                     element: <ProtectedRoute><Groups /></ProtectedRoute >
+                },
+                {
+                    path: 'subjects',
+                    element: <ProtectedRoute><Subjects /></ProtectedRoute >
                 },
                 {
                     path: 'auth/signup',
